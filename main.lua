@@ -1,5 +1,3 @@
---- Venom on top
-_, Protected_by_Trey, Discord = 'discord.gg/gQEH2uZxUk'
 
 
 
